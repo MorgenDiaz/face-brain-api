@@ -1,0 +1,31 @@
+{
+  "name": "face-brain-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MorgenDiaz/face-brain-api.git"
+  },
+  "keywords": [
+    "Javascript",
+    "Node",
+    "RestAPI"
+  ],
+  "author": "Morgen Diaz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MorgenDiaz/face-brain-api/issues"
+  },
+  "homepage": "https://github.com/MorgenDiaz/face-brain-api#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1"
+  }
+}

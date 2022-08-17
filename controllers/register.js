@@ -3,6 +3,11 @@ export const handleRegister = async (req, res, database, bcrypt) => {
   const hash = bcrypt.hashSync(password);
 
   database.transaction(async (trx) => {
+    if (!name || !email || !password) {
+      res.status(400).json(`Invalid registration data.`);
+      return;
+    }
+
     try {
       const loginEmail = await trx
         .insert({ hash: hash, email: email.toLowerCase() })

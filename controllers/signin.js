@@ -1,6 +1,11 @@
 export const handleSignin = async (req, res, database, bcrypt) => {
   let { email, password } = req.body;
 
+  if (!email || !password) {
+    res.status(400).json("invalid login");
+    return;
+  }
+
   try {
     const credentials = await database
       .select("email", "hash")

@@ -6,7 +6,7 @@ import knex from "knex";
 import { handleRegister } from "./controllers/register.js";
 import { handleSignin } from "./controllers/signin.js";
 import { handleProfile } from "./controllers/profile.js";
-import { handleImage } from "./controllers/image.js";
+import { handleImage, handleFaceDetect } from "./controllers/image.js";
 
 const database = knex({
   client: "pg",
@@ -38,6 +38,10 @@ app.get("/profile/:id", (req, res) => {
 
 app.post("/register", (req, res) => {
   handleRegister(req, res, database, bcrypt);
+});
+
+app.post("/imagefacedetect", (req, res) => {
+  handleFaceDetect(req, res);
 });
 
 app.put("/image", (req, res) => {

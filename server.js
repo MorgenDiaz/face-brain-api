@@ -11,10 +11,8 @@ import { handleImage, handleFaceDetect } from "./controllers/image.js";
 const database = knex({
   client: "pg",
   connection: {
-    host: "127.0.0.1",
-    user: "",
-    password: "",
-    database: "face-brain",
+    host: process.env.DATABASE_URL,
+    ssl: true,
   },
 });
 
